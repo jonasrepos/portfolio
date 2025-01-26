@@ -1,4 +1,37 @@
-#background {    
-    position: relative;
-    background-color: #C0C0C0;
+#background {
+  position: relative;
+  background-color: #c0c0c0;
+  box-shadow: -1px 0px 0px 0px #c0c0c0, 0px -1px 0px 0px #c0c0c0,
+    -1px -1px 0px 0px #c0c0c0, 1px -1px 0px 0px #000000,
+    -1px 1px 0px 0px #000000, 1px 1px 0px 0px #000000,
+    inset 1px 0px 0px 0px #ffffff, inset 0px 1px 0px 0px #ffffff,
+    inset 0px -1px 1px 0px rgba(0, 0, 0, 0.5),
+    inset -1px 0px 1px 0px rgba(0, 0, 0, 0.5);
+  padding: 3px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#header {
+  background-color: #828182;
+  width: 100%;
+  height: 20px;
+  color: #c0c0c0;
+
+  display: flex;
+  gap: 2px;
+}
+
+#icon {
+  height: 20px;
+}
+
+#text {
+}
+
+#content {
+  background-color: #ffffff;
+  height: 100%;
 }

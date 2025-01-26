@@ -9,12 +9,13 @@ export const Desktop = ({ isFullscreen }) => {
 
   return (
     <>
-      {/* {!isFullscreen && <img src="monitor.png" id={styles.monitor} />} */}
-
+      {/* 
+      {!isFullscreen && <img src="monitor.png" id={styles.monitor} />}
       {!isFullscreen && <Screensaver />}
+      */}
 
       <div id={isFullscreen ? styles.fullscreen : styles.standart}>
-        <Window x="10" y="150" z="50" width="800" height="300" />
+        <Window x="10" y="300" z="50" width="800" height="300" />
         <Taskbar />
       </div>
     </>

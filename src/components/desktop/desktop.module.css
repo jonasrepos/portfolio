@@ -2,7 +2,6 @@
   aspect-ratio: 4 / 3;
   height: 90%;
   position: relative;
-
   background-color: #047f7e;
 }
 
@@ -10,15 +9,13 @@
   height: 100%;
   width: 100%;
   position: relative;
-
   background-color: #047f7e;
 }
 
 #monitor {
   aspect-ratio: 4 / 3;
-  height: 90%;
+  height: 116%;
   position: fixed;
-
   z-index: 1000;
-  pointer-events: none; /* Prevent interactions with the overlay */
+  pointer-events: none;
 }
