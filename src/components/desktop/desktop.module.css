@@ -1,0 +1,26 @@
+#standart {
+    width: 58%;
+    height: 84%;
+    position: relative;
+
+    background-color: #047F7E;
+}
+
+#fullscreen {
+    width: auto;
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    background-color: #047F7E;
+}
+
+#monitor {
+    height: 110%;
+    aspect-ratio: 4 / 3; 
+    position: fixed;
+
+    z-index: 1000;
+    pointer-events: none; /* Prevent interactions with the overlay */
+
+}

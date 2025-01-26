@@ -1,0 +1,17 @@
+#layout {
+    width: 100%;
+    height: 100vh;
+
+    background-color: #222222;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#fullscreenBtn {
+    position: absolute;
+    width: 50px;
+    top: 10px;
+    right: 10px;
+}
