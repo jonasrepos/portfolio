@@ -1,26 +1,24 @@
 #standart {
-    width: 58%;
-    height: 84%;
-    position: relative;
+  aspect-ratio: 4 / 3;
+  height: 90%;
+  position: relative;
 
-    background-color: #047F7E;
+  background-color: #047f7e;
 }
 
 #fullscreen {
-    width: auto;
-    height: 100%;
-    width: 100%;
-    position: relative;
+  height: 100%;
+  width: 100%;
+  position: relative;
 
-    background-color: #047F7E;
+  background-color: #047f7e;
 }
 
 #monitor {
-    height: 110%;
-    aspect-ratio: 4 / 3; 
-    position: fixed;
+  aspect-ratio: 4 / 3;
+  height: 90%;
+  position: fixed;
 
-    z-index: 1000;
-    pointer-events: none; /* Prevent interactions with the overlay */
-
+  z-index: 1000;
+  pointer-events: none; /* Prevent interactions with the overlay */
 }
