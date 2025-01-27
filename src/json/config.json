@@ -1,0 +1,26 @@
+{
+  "windows": [
+    {
+      "id": 1,
+      "initX": 300,
+      "initY": 200,
+      "z": 50,
+      "initWidth": 1000,
+      "initHeight": 700,
+      "content": "Test",
+      "title": "Portfolio - Jonas Neu",
+      "icon": "rahmenIcon.png"
+    },
+    {
+      "id": 2,
+      "initX": 500,
+      "initY": 300,
+      "z": 60,
+      "initWidth": 800,
+      "initHeight": 600,
+      "content": "Another Window",
+      "title": "Second Window",
+      "icon": "secondIcon.png"
+    }
+  ]
+}

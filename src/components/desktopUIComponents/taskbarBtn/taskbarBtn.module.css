@@ -1,49 +1,29 @@
 #taskbarBtn {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    height: 25px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 25px;
 
-    border: none;
-    background-color: #C0C0C0;
+  border: none;
+  background-color: #c0c0c0;
 
-    box-shadow: 1px 0px 0px 0px #000000, 
-                0px 1px 0px 0px #000000, 
-                1px 1px 0px 0px #000000,
-                inset 1px 0px 0px 0px #FFFFFF, 
-                inset 0px 1px 0px 0px #FFFFFF,
-                inset 0px -1px 1px 0px rgba(0,0,0,0.5), 
-                inset -1px 0px 1px 0px rgba(0,0,0,0.5);
+  box-shadow: 1px 0px 0px 0px #000000, 0px 1px 0px 0px #000000,
+    1px 1px 0px 0px #000000, inset 1px 0px 0px 0px #ffffff,
+    inset 0px 1px 0px 0px #ffffff, inset 0px -1px 1px 0px rgba(0, 0, 0, 0.5),
+    inset -1px 0px 1px 0px rgba(0, 0, 0, 0.5);
 }
 
 #taskbarBtn:active {
-    transform: translate(1px, 1px);
-    box-shadow: 1px 1px 0px 0px #FFFFFF,
-                0px 1px 0px 0px #FFFFFF,
-                1px 0px 0px 0px #FFFFFF,
-                -1px -1px 0px 0px #000000, 
-                1px -1px 0px 0px #000000, 
-                -1px 1px 0px 0px #000000,
-                inset 1px 1px 1px 1px rgba(0,0,0,0.5);
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px 0px #ffffff, 0px 1px 0px 0px #ffffff,
+    1px 0px 0px 0px #ffffff, -1px -1px 0px 0px #000000, 1px -1px 0px 0px #000000,
+    -1px 1px 0px 0px #000000, inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-#save {
-    box-shadow: 1px 0px 0px 0px #000000, 
-    0px 1px 0px 0px #000000, 
-    1px 1px 0px 0px #000000,
-    -1px 0px 0px 0px #FFFFFF, 
-    -1px -1px 0px 0px #FFFFFF, 
-    0px -1px 0px 0px #FFFFFF, 
-    inset 1px 0px 0px 0px #FFFFFF, 
-    inset 0px 1px 0px 0px #FFFFFF,
-    inset 0px -1px 1px 0px rgba(0,0,0,0.5), 
-    inset -1px 0px 1px 0px rgba(0,0,0,0.5);
-}
-
-#text {  
+#text {
   font-family: "Pixelify Sans", serif;
 }
 
 #icon {
-    height: 16px;
+  height: 16px;
 }
