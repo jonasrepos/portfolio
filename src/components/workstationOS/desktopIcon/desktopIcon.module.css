@@ -1,0 +1,31 @@
+.iconContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.iconContainer:active .icon {
+  filter: invert(100%);
+}
+
+.iconContainer:active .title {
+  outline: 2px dotted #000000;
+  outline-offset: 0px;
+}
+
+.icon {
+  width: 64px;
+
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.title {
+  color: #ffffff;
+}

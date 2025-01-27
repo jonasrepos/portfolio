@@ -14,7 +14,7 @@
   background-color: #047f7e;
 }
 
-#monitor {
+.monitor {
   aspect-ratio: 4 / 3;
   height: 116%;
   position: fixed;

@@ -1,4 +1,4 @@
-#taskbarBtn {
+.taskbarBtn {
   display: flex;
   align-items: center;
   gap: 2px;
@@ -13,17 +13,23 @@
     inset -1px 0px 1px 0px rgba(0, 0, 0, 0.5);
 }
 
-#taskbarBtn:active {
+.taskbarBtn:active {
   transform: translate(1px, 1px);
   box-shadow: 1px 1px 0px 0px #ffffff, 0px 1px 0px 0px #ffffff,
     1px 0px 0px 0px #ffffff, -1px -1px 0px 0px #000000, 1px -1px 0px 0px #000000,
     -1px 1px 0px 0px #000000, inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-#text {
+.text {
   font-family: "Pixelify Sans", serif;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
-#icon {
+.icon {
   height: 16px;
+  pointer-events: none;
+  -webkit-user-drag: none;
 }

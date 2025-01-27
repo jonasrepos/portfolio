@@ -1,4 +1,4 @@
-#background {
+.background {
   position: absolute;
   background-color: #c0c0c0;
   box-shadow: -1px 0px 0px 0px #c0c0c0, 0px -1px 0px 0px #c0c0c0,
@@ -14,7 +14,7 @@
   gap: 4px;
 }
 
-#header {
+.header {
   background-color: #828182;
   height: 20px;
   color: #c0c0c0;
@@ -25,20 +25,26 @@
   padding: 0 2px;
 }
 
-#icon {
+.icon {
   height: 20px;
+  pointer-events: none;
+  -webkit-user-drag: none;
 }
 
-#text {
+.text {
   flex-grow: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
-#content {
+.content {
   background-color: #ffffff;
   height: 100%;
 }
 
-#resizeBtn {
+.resizeBtn {
   height: 16px;
   width: 16px;
   padding: 0 2px;
@@ -54,13 +60,13 @@
     inset -1px 0px 1px 0px rgba(0, 0, 0, 0.5);
 }
 
-#resizeBtn:active {
+.resizeBtn:active {
   transform: translate(1px, 1px);
   box-shadow: 1px 1px 0px 0px #ffffff, 0px 1px 0px 0px #ffffff,
     1px 0px 0px 0px #ffffff, -1px -1px 0px 0px #000000, 1px -1px 0px 0px #000000,
     -1px 1px 0px 0px #000000, inset 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-#resizeIcon {
+.resizeIcon {
   height: 12px;
 }

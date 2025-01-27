@@ -75,7 +75,7 @@ export const Window = ({
   return (
     <div
       ref={windowRef}
-      id={styles.background}
+      className={styles.background}
       style={{
         top: y + "px",
         left: x + "px",
@@ -84,14 +84,14 @@ export const Window = ({
         height: height,
       }}
     >
-      <div id={styles.header} onMouseDown={handleMouseDown}>
-        <img src={icon} alt="" id={styles.icon} />
-        <span id={styles.text}> {title} </span>
-        <button onClick={handleSetFullsize} id={styles.resizeBtn}>
-          <img src={"resizeIcon.png"} alt="" id={styles.resizeIcon} />
+      <div className={styles.header} onMouseDown={handleMouseDown}>
+        <img src={icon} alt="" className={styles.icon} />
+        <span className={styles.text}> {title} </span>
+        <button onClick={handleSetFullsize} className={styles.resizeBtn}>
+          <img src={"resizeIcon.png"} alt="" className={styles.resizeIcon} />
         </button>
       </div>
-      <div id={styles.content}> {content} </div>
+      <div className={styles.content}> {content} </div>
     </div>
   );
 };
