@@ -12,7 +12,7 @@ export const Monitor = ({ isFullscreen }) => {
     {
       id: 1,
       title: "Portfolio",
-      content: <Portfolio/>,
+      content: <Portfolio />,
       icon: "frameIcon.png",
       initX: "10%",
       initY: "10%",
@@ -41,22 +41,21 @@ export const Monitor = ({ isFullscreen }) => {
     <>
       <div className={isFullscreen ? styles.fullscreen : styles.standart}>
         <div className={styles.desktopContainer}>
-        {windows.map((window) => (
-        <Window
-          key={window.id}
-          initX={window.initX}
-          initY={window.initY}
-          z={window.z}
-          initWidth={window.initWidth}
-          initHeight={window.initHeight}
-          content={window.content}
-          title={window.title}
-          icon={window.icon}
-          handleCloseWindow={() => removeWindow(window.id)} // Übergibt die Entfernen-Funktion
-        />
-      ))}
-        <Desktop />
-
+          {windows.map((window) => (
+            <Window
+              key={window.id}
+              initX={window.initX}
+              initY={window.initY}
+              z={window.z}
+              initWidth={window.initWidth}
+              initHeight={window.initHeight}
+              content={window.content}
+              title={window.title}
+              icon={window.icon}
+              handleCloseWindow={() => removeWindow(window.id)} // Übergibt die Entfernen-Funktion
+            />
+          ))}
+          <Desktop />
         </div>
 
         <Taskbar />
