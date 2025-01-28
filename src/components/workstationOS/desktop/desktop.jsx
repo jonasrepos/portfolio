@@ -4,8 +4,8 @@ import DesktopIcon from "../desktopIcon/desktopIcon";
 export const Desktop = () => {
   return (
     <>
-      <div className={styles.desktop}>
-        <DesktopIcon />
+      <div className={styles.background}>
+        <DesktopIcon id="1" icon="frameIcon.png" title="Portfolio" />
       </div>
     </>
   );

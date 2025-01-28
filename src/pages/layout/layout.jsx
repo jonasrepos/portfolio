@@ -3,7 +3,7 @@ import styles from "./layout.module.css";
 import Monitor from "../../components/workstationOS/monitor/monitor";
 
 export const Layout = () => {
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(true);
 
   const toggleFullscreen = () => {
     setIsFullscreen(!isFullscreen);

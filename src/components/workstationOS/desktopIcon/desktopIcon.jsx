@@ -1,11 +1,12 @@
 import styles from "./desktopIcon.module.css";
 
-export const DesktopIcon = () => {
+export const DesktopIcon = ( {icon, title} ) => {
+  
   return (
     <>
       <div className={styles.iconContainer}>
-        <img src="frameIcon.png" alt="" className={styles.icon} />
-        <span className={styles.title}>Portfolio</span>
+        <img src={icon} alt="" className={styles.icon} />
+        <span className={styles.title}>{title}</span>
       </div>
     </>
   );

@@ -1,4 +1,16 @@
 
+@font-face {
+  font-family: "Pixelify Sans";
+  src: local("Pixelify Sans"),
+    url("./fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"),
+  url("./fonts/Inter/Inter-VariableFont_wght.ttf") format("truetype");
+}
+
 
 :root {
   font-family: "Pixelify Sans", serif;

@@ -1,0 +1,82 @@
+
+  
+
+.background {
+    --text: #200405;
+    --background: #fdf2f2;
+    --primary: #e61920;
+    --secondary: #f2dd88;
+    --accent: #deeb4c;
+
+    font-family: "Inter", Times, serif;
+    font-size: 16px;
+
+    max-width: 100%;
+    height: 100%;
+    background-color: var(--background);
+}
+
+.header {
+    height: 100%;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.headerBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerImage {
+    height: 80%;
+}
+
+
+.headerTitle {
+    font-family: "Pixelify Sans", serif;
+    color: var(--text);
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+.headerSubTitle {
+    color: var(--text);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.headerText {
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.pager {
+    max-width: 100%;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.technologiesBox {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.techStack {
+    display: flex;
+    gap: 5px;
+}
+
+.techStackImage {
+    width: 32px;
+    height: 32px;
+}

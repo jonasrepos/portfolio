@@ -10,43 +10,107 @@ export const Window = ({
   content,
   title,
   icon,
+  handleCloseWindow
 }) => {
   const [x, setX] = useState(initX);
   const [y, setY] = useState(initY);
-  const [width, setWidth] = useState(initWidth + "px");
-  const [height, setHeight] = useState(initHeight + "px");
+  const [width, setWidth] = useState(initWidth);
+  const [height, setHeight] = useState(initHeight);
 
-  const [prevWidth, setPrevWidth] = useState(initWidth + "px");
-  const [prevHeight, setPrevHeight] = useState(initHeight + "px");
+  const [prevWidth, setPrevWidth] = useState(initWidth);
+  const [prevHeight, setPrevHeight] = useState(initHeight);
+
   const [isFullsize, setIsFullsize] = useState(false);
 
   const windowRef = useRef(null);
   const isDragging = useRef(false);
   const offset = useRef({ x: 0, y: 0 });
 
-  const handleMouseDown = (e) => {
-    if (!isFullsize) {
-      setIsFullsize(!isFullsize);
-      setWidth(prevWidth);
-      setHeight(prevHeight);
+  // Berechnet initial Pixelwerte basierend auf Prozentangaben
+  const calculatePixels = () => {
+    const parent = windowRef.current?.parentNode;
+    if (parent) {
+      const parentWidth = parent.offsetWidth;
+      const parentHeight = parent.offsetHeight;
+
+      setX((parseFloat(initX) / 100) * parentWidth + "px");
+      setY((parseFloat(initY) / 100) * parentHeight + "px");
+      setWidth((parseFloat(initWidth) / 100) * parentWidth + "px");
+      setHeight((parseFloat(initHeight) / 100) * parentHeight + "px");
     }
+  };
+
+  // Initiale Größe und Position berechnen
+  useEffect(() => {
+    calculatePixels();
+  }, []);
+
+  // Drag & Drop starten
+  const handleMouseDown = (e) => {
     isDragging.current = true;
+    const currentX = parseFloat(x);
+    const currentY = parseFloat(y);
+
     offset.current = {
-      x: e.clientX - x,
-      y: e.clientY - y,
+      x: e.clientX - currentX,
+      y: e.clientY - currentY,
     };
   };
 
+  // Bewegung des Fensters
   const handleMouseMove = (e) => {
     if (!isDragging.current) return;
-    setX(e.clientX - offset.current.x);
-    setY(e.clientY - offset.current.y);
+
+    const parent = windowRef.current?.parentNode;
+    if (parent) {
+      const parentWidth = parent.offsetWidth;
+      const parentHeight = parent.offsetHeight;
+
+      let newX = e.clientX - offset.current.x;
+      let newY = e.clientY - offset.current.y;
+
+      newX = Math.max(0, Math.min(newX, parentWidth - parseFloat(width)));
+      newY = Math.max(0, Math.min(newY, parentHeight - parseFloat(height)));
+
+      if (newY === 0 && !isFullsize) {
+        handleSetFullsize();
+        return;
+      }
+
+      setX(newX + "px");
+      setY(newY + "px");
+    }
   };
 
+  // Drag & Drop stoppen
   const handleMouseUp = () => {
     isDragging.current = false;
   };
 
+  // Vollbildmodus umschalten
+  const handleSetFullsize = () => {
+    const parent = windowRef.current?.parentNode;
+    if (parent) {
+      const parentWidth = parent.offsetWidth;
+      const parentHeight = parent.offsetHeight;
+
+      if (!isFullsize) {
+        setPrevWidth(width);
+        setPrevHeight(height);
+        setX("0px");
+        setY("0px");
+        setWidth(parentWidth + "px");
+        setHeight(parentHeight + "px");
+      } else {
+        setWidth(prevWidth);
+        setHeight(prevHeight);
+        calculatePixels(); // Zurück zu den ursprünglichen Pixelwerten
+      }
+      setIsFullsize(!isFullsize);
+    }
+  };
+
+  // Event-Listener für Drag & Drop
   useEffect(() => {
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
@@ -54,44 +118,32 @@ export const Window = ({
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
     };
-  }, []);
-
-  const handleSetFullsize = () => {
-    if (!isFullsize) {
-      setIsFullsize(!isFullsize);
-      setWidth(prevWidth);
-      setHeight(prevHeight);
-    } else {
-      setIsFullsize(!isFullsize);
-      setPrevWidth(width);
-      setPrevHeight(height);
-      setX(0);
-      setY(0);
-      setWidth("100%");
-      setHeight("100%");
-    }
-  };
+  }, [handleMouseMove, handleMouseUp]);
 
   return (
     <div
       ref={windowRef}
       className={styles.background}
       style={{
-        top: y + "px",
-        left: x + "px",
+        top: y,
+        left: x,
         zIndex: z,
         width: width,
         height: height,
+        position: "absolute",
       }}
     >
       <div className={styles.header} onMouseDown={handleMouseDown}>
         <img src={icon} alt="" className={styles.icon} />
-        <span className={styles.text}> {title} </span>
+        <span className={styles.text}>{title}</span>
         <button onClick={handleSetFullsize} className={styles.resizeBtn}>
           <img src={"resizeIcon.png"} alt="" className={styles.resizeIcon} />
         </button>
+        <button onClick={handleCloseWindow} className={styles.resizeBtn}>
+          <p>X</p>
+        </button>
       </div>
-      <div className={styles.content}> {content} </div>
+      <div className={styles.content}>{content}</div>
     </div>
   );
 };

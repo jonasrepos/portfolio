@@ -1,3 +1,4 @@
+
 import styles from "./taskbar.module.css";
 import { TaskbarBtn } from "../taskbarBtn/taskbarBtn";
 
@@ -13,7 +14,10 @@ export const Taskbar = () => {
       <div className={styles.taskbarContainer}>
         <TaskbarBtn title="Start" icon="windowsLogo.png" fontWeight="700" />
         <div className={styles.taskbarTaskContainer}>
-          <TaskbarBtn title="Portfolio" icon="frameIcon.png" width="150px" />
+            <TaskbarBtn 
+            key={window.id}
+            title="Portfolio"
+            icon="frameIcon.png" width="150px" />
         </div>
         <div className={styles.currentTimeBackground}>{showTime}</div>
       </div>
