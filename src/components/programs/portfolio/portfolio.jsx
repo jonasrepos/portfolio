@@ -79,10 +79,17 @@ const tools = [
 export const Portfolio = () => {
   return (
     <div className={styles.background}>
+      <span id="intro"></span>
       <div className={styles.navigationBox}>
-        <span className={styles.navigationItem}>Intro •</span>
-        <span className={styles.navigationItem}>Technologien •</span>
-        <span className={styles.navigationItem}>Projekte •</span>
+        <a className={styles.navigationItem} href="#intro">
+          Intro •
+        </a>
+        <a className={styles.navigationItem} href="#technologieen">
+          Technologien •
+        </a>
+        <a className={styles.navigationItem} href="#projekte">
+          Projekte •
+        </a>
       </div>
       <div className={styles.header}>
         <img src="jonas.JPEG" alt="" className={styles.headerImage} />
@@ -101,7 +108,7 @@ export const Portfolio = () => {
         </div>
       </div>
 
-      <div className={styles.pager}>
+      <div className={styles.pager} id="technologieen">
         <div className={styles.technologiesBox}>
           <span className={styles.technologieHeader}>
             Damit habe ich schon gearbeitet.
@@ -166,6 +173,9 @@ export const Portfolio = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className={styles.pager} id="projekte">
+        test
       </div>
     </div>
   );

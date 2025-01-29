@@ -12,12 +12,12 @@ export const Layout = () => {
   return (
     <div className={styles.layout}>
       <Monitor isFullscreen={isFullscreen} />
-      <img
+      {/* <img
         src={isFullscreen ? "nofullscreen.png" : "fullscreen.png"}
         alt="Fullscreen Toggle"
         className={styles.fullscreenBtn}
         onClick={toggleFullscreen}
-      />
+      />*/}
     </div>
   );
 };

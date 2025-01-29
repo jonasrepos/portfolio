@@ -10,7 +10,7 @@ export const Window = ({
   content,
   title,
   icon,
-  handleCloseWindow
+  handleCloseWindow,
 }) => {
   const [x, setX] = useState(initX);
   const [y, setY] = useState(initY);
