@@ -24,7 +24,13 @@ export const Window = ({
 
   const windowRef = useRef(null);
   const isDragging = useRef(false);
-  const offset = useRef({ x: 0, y: 0 });
+  const offset = useRef({ x: 0, y: 0 });  const [fontSize, setFontSize] = useState(0);
+
+  useEffect(() => {
+    if (width) {
+      setFontSize(parseFloat(width) * 0.01);
+    }
+  }, [width]);
 
   // Berechnet initial Pixelwerte basierend auf Prozentangaben
   const calculatePixels = () => {
@@ -131,6 +137,7 @@ export const Window = ({
         width: width,
         height: height,
         position: "absolute",
+        fontSize: fontSize
       }}
     >
       <div className={styles.header} onMouseDown={handleMouseDown}>
@@ -143,7 +150,9 @@ export const Window = ({
           <p>X</p>
         </button>
       </div>
-      <div className={styles.content}>{content}</div>
+      <div className={styles.content}>
+        {content}
+      </div>
     </div>
   );
 };

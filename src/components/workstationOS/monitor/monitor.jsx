@@ -12,7 +12,7 @@ export const Monitor = ({ isFullscreen }) => {
     {
       id: 1,
       title: "Portfolio",
-      content: <Portfolio />,
+      content: <Portfolio/>,
       icon: "frameIcon.png",
       initX: "10%",
       initY: "10%",
@@ -22,13 +22,13 @@ export const Monitor = ({ isFullscreen }) => {
     },
     /*{
       id: 2,
-      title: "Hinweis",
-      content: "Vielen Dank für das Besuchen meines Portfolios!",
+      title: "test",
+      content: <iframe src="https://portainer.jonasneu.de/" width="100%" height="100%" frameborder="0"></iframe>,
       icon: "monitor.png",
-      initX: "40%",
-      initY: "40%",
-      initWidth: "20%",
-      initHeight: "5%",
+      initX: "10%",
+      initY: "10%",
+      initWidth: "80%",
+      initHeight: "80%",
       z: 2,
     },*/
   ]);

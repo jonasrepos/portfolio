@@ -77,105 +77,126 @@ const tools = [
 ];
 
 export const Portfolio = () => {
+
   return (
-    <div className={styles.background}>
-      <span id="intro"></span>
+    <div className={styles.site}>
       <div className={styles.navigationBox}>
+           
         <a className={styles.navigationItem} href="#intro">
-          Intro •
+          Intro
         </a>
         <a className={styles.navigationItem} href="#technologieen">
-          Technologien •
+          Technologien
         </a>
         <a className={styles.navigationItem} href="#projekte">
-          Projekte •
+          Projekte
         </a>
       </div>
-      <div className={styles.header}>
-        <img src="jonas.JPEG" alt="" className={styles.headerImage} />
-        <div className={styles.headerBox}>
-          <span className={styles.headerTitle}>Jonas Neu</span>
-          <span className={styles.headerSubTitle}>
-            Software Engineering Student
-          </span>
 
-          <span className={styles.headerText}>
-            Herzlich willkommen auf meinem Portfolio! Ich lade Sie ein,
-            weiterzuscrollen, um mehr über meine gesammelten Erfahrungen in der
-            Softwareentwicklung sowie die Technologien und Projekte zu erfahren,
-            die ich im Laufe meines Studiums erfolgreich umgesetzt habe.
-          </span>
-        </div>
-      </div>
+      <div className={styles.pagerIntro} id="intro">
+        <div className={styles.headerBox} >
+          <img src="jonas.JPEG" alt="" className={styles.headerImage} />
+          <div className={styles.headerTextBox}>
+            <span className={styles.headerTitle}>Jonas Neu</span>
+            <span className={styles.headerSubTitle}>
+              Software Engineering Student
+            </span>
 
-      <div className={styles.pager} id="technologieen">
-        <div className={styles.technologiesBox}>
-          <span className={styles.technologieHeader}>
-            Damit habe ich schon gearbeitet.
-          </span>
-          <div className={styles.technologiesListBox}>
-            <div className={styles.techStack}>
-              <span className={styles.technologieTitle}>Sprachen</span>
-              {sprachen.map((sprache, index) => (
-                <div key={index} className={styles.techStackItem}>
-                  <img
-                    src={sprache.image}
-                    alt={sprache.name}
-                    className={styles.techStackImage}
-                  />
-                  <span className={styles.techStackTitle}>{sprache.name}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className={styles.techStack}>
-              <span className={styles.technologieTitle}>Technologien</span>
-              {technologien.map((technologie, index) => (
-                <div key={index} className={styles.techStackItem}>
-                  <img
-                    src={technologie.image}
-                    alt={technologie.name}
-                    className={styles.techStackImage}
-                  />
-                  <span className={styles.techStackTitle}>
-                    {technologie.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <div className={styles.techStack}>
-              <span className={styles.technologieTitle}>Web</span>
-              {web.map((web, index) => (
-                <div key={index} className={styles.techStackItem}>
-                  <img
-                    src={web.image}
-                    alt={web.name}
-                    className={styles.techStackImage}
-                  />
-                  <span className={styles.techStackTitle}>{web.name}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className={styles.techStack}>
-              <span className={styles.technologieTitle}>Tools</span>
-              {tools.map((tool, index) => (
-                <div key={index} className={styles.techStackItem}>
-                  <img
-                    src={tool.image}
-                    alt={tool.name}
-                    className={styles.techStackImage}
-                  />
-                  <span className={styles.techStackTitle}>{tool.name}</span>
-                </div>
-              ))}
-            </div>
+            <span className={styles.headerText}>
+              Herzlich willkommen auf meinem Portfolio! Ich lade Sie ein,
+              weiterzuscrollen, um mehr über meine gesammelten Erfahrungen in der
+              Softwareentwicklung sowie die Technologien und Projekte zu erfahren,
+              die ich im Laufe meines Studiums erfolgreich umgesetzt habe.
+            </span>
           </div>
         </div>
       </div>
-      <div className={styles.pager} id="projekte">
-        test
+
+      <div className={styles.pagerTechnologies} id="technologieen">
+        <span className={styles.technologieHeader}>
+          Damit habe ich schon gearbeitet.
+        </span>
+        <div className={styles.technologiesListBox}>
+          <div className={styles.techStack}>
+            <span className={styles.technologieTitle}>Sprachen</span>
+            {sprachen.map((sprache, index) => (
+              <div key={index} className={styles.techStackItem}>
+                <img
+                  src={sprache.image}
+                  alt={sprache.name}
+                  className={styles.techStackImage}
+                />
+                <span className={styles.techStackTitle}>{sprache.name}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.techStack}>
+            <span className={styles.technologieTitle}>Technologien</span>
+            {technologien.map((technologie, index) => (
+              <div key={index} className={styles.techStackItem}>
+                <img
+                  src={technologie.image}
+                  alt={technologie.name}
+                  className={styles.techStackImage}
+                />
+                <span className={styles.techStackTitle}>
+                  {technologie.name}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.techStack}>
+            <span className={styles.technologieTitle}>Web</span>
+            {web.map((web, index) => (
+              <div key={index} className={styles.techStackItem}>
+                <img
+                  src={web.image}
+                  alt={web.name}
+                  className={styles.techStackImage}
+                />
+                <span className={styles.techStackTitle}>{web.name}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.techStack}>
+            <span className={styles.technologieTitle}>Tools</span>
+            {tools.map((tool, index) => (
+              <div key={index} className={styles.techStackItem}>
+                <img
+                  src={tool.image}
+                  alt={tool.name}
+                  className={styles.techStackImage}
+                />
+                <span className={styles.techStackTitle}>{tool.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className={styles.pagerProjekte} id="projekte">
+        <div className={styles.projectsBox}>
+          <div className={styles.projectContainer}>
+                <img src="projects/portfolio.png" alt=""
+                    className={styles.projectImage0}/>
+                <img src="projects/portfolio.png" alt=""
+                    className={styles.projectImage1}/>
+                <div className={styles.projectDescription}>
+                  <span className={styles.projectTitle}>Portfolio</span>
+                </div>
+              </div>
+        <div className={styles.projectContainer}>
+              <img src="projects/portfolio.png" alt=""
+                  className={styles.projectImage0}/>
+              <img src="projects/portfolio.png" alt=""
+                  className={styles.projectImage1}/>
+              <div className={styles.projectDescription}>
+                <span className={styles.projectTitle}>Portfolio</span>
+              </div>
+            </div>
+            </div>
       </div>
     </div>
   );
