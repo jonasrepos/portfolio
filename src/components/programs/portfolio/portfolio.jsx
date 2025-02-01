@@ -48,6 +48,10 @@ const technologien = [
     image: "techStackIcons/nodejs.png",
   },
   {
+    name: "NestJS",
+    image: "techStackIcons/nestjs.png",
+  },
+  {
     name: "Postgresql",
     image: "techStackIcons/postgresql.png",
   },
@@ -81,7 +85,7 @@ export const Portfolio = () => {
   return (
     <div className={styles.site}>
       <div className={styles.navigationBox}>
-           
+
         <a className={styles.navigationItem} href="#intro">
           Intro
         </a>
@@ -178,25 +182,52 @@ export const Portfolio = () => {
       </div>
       <div className={styles.pagerProjekte} id="projekte">
         <div className={styles.projectsBox}>
+          <div className={styles.projectBarstoolContainer}>
+            <img src="projects/barstool1.png" alt=""
+              className={styles.projectImage0} />
+            <img src="projects/barstool2.png" alt=""
+              className={styles.projectImage1} />
+            <div className={styles.projectDescription}>
+              <span className={styles.projectTitle}>Barstool</span>
+              <span className={styles.e}>Barstool ist ein Tool zum finden einer Location zum lernen außerhalb der Öffnungszeiter der Universitäts Bibliothek.</span>
+              <a href="http://barstool.jonasneu.de/">besuchen</a>
+            </div>
+          </div>
           <div className={styles.projectContainer}>
-                <img src="projects/portfolio.png" alt=""
-                    className={styles.projectImage0}/>
-                <img src="projects/portfolio.png" alt=""
-                    className={styles.projectImage1}/>
-                <div className={styles.projectDescription}>
-                  <span className={styles.projectTitle}>Portfolio</span>
-                </div>
-              </div>
-        <div className={styles.projectContainer}>
-              <img src="projects/portfolio.png" alt=""
-                  className={styles.projectImage0}/>
-              <img src="projects/portfolio.png" alt=""
-                  className={styles.projectImage1}/>
-              <div className={styles.projectDescription}>
-                <span className={styles.projectTitle}>Portfolio</span>
-              </div>
+            <img src="projects/portfolio1.png" alt=""
+              className={styles.projectImage0} />
+            <img src="projects/portfolio2.png" alt=""
+              className={styles.projectImage1} />
+            <div className={styles.projectDescription}>
+              <span className={styles.projectTitle}>Portfolio</span>
+              <span className={styles.e}>
+                Mein persönliches Portfolio ist ein Proof-of-Concept-Projekt,
+                das meine bisherigen Erfahrungen und Arbeiten auf eine einzigartige
+                und interaktive Weise präsentiert. Es ist als ein fiktives Betriebssystem
+                gestaltet und visuell an Windows NT 4.0 angelehnt, um eine nostalgische,
+                aber dennoch moderne Benutzererfahrung zu bieten.
+
+                Beim Start öffnet sich eine Übersichtsseite mit Header, Technologien und
+                Projekten, während das Betriebssystem frei erkundet werden kann
+                – inklusive versteckter Secrets.
+              </span>
+              <a href="http://portfolio.jonasneu.de/">besuchen</a>
             </div>
+          </div>
+          <div className={styles.projectContainer}>
+            <img src="projects/timetracker1.png" alt=""
+              className={styles.projectImage0} />
+            <img src="projects/timetracker2.png" alt=""
+              className={styles.projectImage1} />
+            <div className={styles.projectDescription}>
+              <span className={styles.projectTitle}>Timetracker</span>
+              <span className={styles.e}>
+                Eine API, welche Zeiten von einem NFC-Lesegerät empfängt, validiert und in einer Datenbank ablegt. Ebenso gibt es ein Frontend zum Visualisieren der Daten.
+              </span>
+              <a href="http://portfolio.jonasneu.de/">besuchen</a>
             </div>
+          </div>
+        </div>
       </div>
     </div>
   );
