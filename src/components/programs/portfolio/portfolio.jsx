@@ -182,7 +182,7 @@ export const Portfolio = () => {
       </div>
       <div className={styles.pagerProjekte} id="projekte">
         <div className={styles.projectsBox}>
-          <div className={styles.projectBarstoolContainer}>
+          <div className={styles.projectContainer}>
             <img src="projects/barstool1.png" alt=""
               className={styles.projectImage0} />
             <img src="projects/barstool2.png" alt=""
@@ -211,7 +211,7 @@ export const Portfolio = () => {
                 Projekten, während das Betriebssystem frei erkundet werden kann
                 – inklusive versteckter Secrets.
               </span>
-              <a href="http://portfolio.jonasneu.de/">besuchen</a>
+              <a href="#">besuchen</a>
             </div>
           </div>
           <div className={styles.projectContainer}>
