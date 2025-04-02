@@ -1,91 +1,109 @@
 import styles from "./portfolio.module.css";
 
-const sprachen = [
-  {
-    name: "Java",
-    image: "techStackIcons/java.png",
-  },
-  {
-    name: "Python",
-    image: "techStackIcons/python.png",
-  },
-  {
-    name: "Java Script",
-    image: "techStackIcons/js.png",
-  },
-  {
-    name: "TypeScript",
-    image: "techStackIcons/typescript.png",
-  },
-  {
-    name: "c",
-    image: "techStackIcons/c.png",
-  },
-];
+const skills = {
+  programmiersprachen: [
+    {
+      name: "Java",
+      image: "techStackIcons/java.png",
+    },
+    {
+      name: "JavaScript",
+      image: "techStackIcons/js.png",
+    },
+    {
+      name: "TypeScript",
+      image: "techStackIcons/typescript.png",
+    },
+    {
+      name: "C",
+      image: "techStackIcons/c.png",
+    },
+    {
+      name: "Python",
+      image: "techStackIcons/python.png",
+    },
+  ],
+  frontend: [
+    {
+      name: "React",
+      image: "techStackIcons/reactjs.png",
+    },
+    {
+      name: "Angular",
+      image: "techStackIcons/angular.png",
+    },
+  ],
+  backend: [
+    {
+      name: "NestJS (REST)",
+      image: "techStackIcons/nestjs.png",
+    },
+    {
+      name: "Spring",
+      image: "techStackIcons/spring-3.svg",
+    },
+    {
+      name: "RabbitMQ (MQTT)",
+      image: "techStackIcons/rabbitmq.svg",
+    },
+  ],
+  datenbanken: [
+    {
+      name: "Postgresql",
+      image: "techStackIcons/postgresql.png",
+    },
+    {
+      name: "MongoDB",
+      image: "techStackIcons/mongodb.svg",
+    },
+  ],
+  devOps_Tools: [
+    {
+      name: "Git",
+      image: "techStackIcons/git.png",
+    },
+    {
+      name: "Docker",
+      image: "techStackIcons/docker.png",
+    },
+    {
+      name: "Figma",
+      image: "techStackIcons/figma.png",
+    },
+  ],
+};
 
-const web = [
+const projects = [
   {
-    name: "React",
-    image: "techStackIcons/reactjs.png",
+    name: "Barstool",
+    images: ["projects/barstool1.png", "projects/barstool2.png"],
+    logo: "projects/barstoolLogo.svg",
+    description:
+      "Barstool ist ein Tool zum Finden einer Location zum Lernen außerhalb der Öffnungszeiten der Universitätsbibliothek.",
+    link: "http://barstool.jonasneu.de/",
   },
   {
-    name: "Angular",
-    image: "techStackIcons/angular.png",
+    name: "Portfolio",
+    images: ["projects/portfolio1.png", "projects/portfolio2.png"],
+    logo: "projects/portfolioLogo.svg",
+    description:
+      "Mein persönliches Portfolio ist ein Proof-of-Concept-Projekt, das meine bisherigen Erfahrungen und Arbeiten auf eine einzigartige und interaktive Weise präsentiert. Es ist als ein fiktives Betriebssystem gestaltet und visuell an Windows NT 4.0 angelehnt.",
+    link: "#",
   },
   {
-    name: "HTML",
-    image: "techStackIcons/html5.png",
-  },
-  {
-    name: "CSS",
-    image: "techStackIcons/css3.png",
-  },
-];
-
-const technologien = [
-  {
-    name: "Node.js",
-    image: "techStackIcons/nodejs.png",
-  },
-  {
-    name: "NestJS",
-    image: "techStackIcons/nestjs.png",
-  },
-  {
-    name: "Postgresql",
-    image: "techStackIcons/postgresql.png",
-  },
-  {
-    name: "Docker",
-    image: "techStackIcons/docker.png",
-  },
-];
-
-const tools = [
-  {
-    name: "Git",
-    image: "techStackIcons/git.png",
-  },
-  {
-    name: "Postman",
-    image: "techStackIcons/postman.png",
-  },
-  {
-    name: "Figma",
-    image: "techStackIcons/figma.png",
-  },
-  {
-    name: "Visual Studio Code",
-    image: "techStackIcons/vscode.png",
+    name: "Timetracker",
+    images: ["projects/timetracker1.png", "projects/timetracker2.png"],
+    logo: "projects/timetrackerLogo.svg",
+    description:
+      "Eine API, welche Zeiten von einem NFC-Lesegerät empfängt, validiert und in einer Datenbank ablegt. Ebenso gibt es ein Frontend zum Visualisieren der Daten.",
+    link: "http://portfolio.jonasneu.de/",
   },
 ];
 
 export const Portfolio = () => {
-
   return (
     <div className={styles.site}>
       <div className={styles.navigationBox}>
-
         <a className={styles.navigationItem} href="#intro">
           Intro
         </a>
@@ -98,7 +116,7 @@ export const Portfolio = () => {
       </div>
 
       <div className={styles.pagerIntro} id="intro">
-        <div className={styles.headerBox} >
+        <div className={styles.headerBox}>
           <img src="jonas.JPEG" alt="" className={styles.headerImage} />
           <div className={styles.headerTextBox}>
             <span className={styles.headerTitle}>Jonas Neu</span>
@@ -108,9 +126,10 @@ export const Portfolio = () => {
 
             <span className={styles.headerText}>
               Herzlich willkommen auf meinem Portfolio! Ich lade Sie ein,
-              weiterzuscrollen, um mehr über meine gesammelten Erfahrungen in der
-              Softwareentwicklung sowie die Technologien und Projekte zu erfahren,
-              die ich im Laufe meines Studiums erfolgreich umgesetzt habe.
+              weiterzuscrollen, um mehr über meine gesammelten Erfahrungen in
+              der Softwareentwicklung sowie die Technologien und Projekte zu
+              erfahren, die ich im Laufe meines Studiums erfolgreich umgesetzt
+              habe.
             </span>
           </div>
         </div>
@@ -123,7 +142,7 @@ export const Portfolio = () => {
         <div className={styles.technologiesListBox}>
           <div className={styles.techStack}>
             <span className={styles.technologieTitle}>Sprachen</span>
-            {sprachen.map((sprache, index) => (
+            {skills.programmiersprachen.map((sprache, index) => (
               <div key={index} className={styles.techStackItem}>
                 <img
                   src={sprache.image}
@@ -136,8 +155,8 @@ export const Portfolio = () => {
           </div>
 
           <div className={styles.techStack}>
-            <span className={styles.technologieTitle}>Technologien</span>
-            {technologien.map((technologie, index) => (
+            <span className={styles.technologieTitle}>Frontend</span>
+            {skills.frontend.map((technologie, index) => (
               <div key={index} className={styles.techStackItem}>
                 <img
                   src={technologie.image}
@@ -152,8 +171,22 @@ export const Portfolio = () => {
           </div>
 
           <div className={styles.techStack}>
-            <span className={styles.technologieTitle}>Web</span>
-            {web.map((web, index) => (
+            <span className={styles.technologieTitle}>Backend</span>
+            {skills.backend.map((tool, index) => (
+              <div key={index} className={styles.techStackItem}>
+                <img
+                  src={tool.image}
+                  alt={tool.name}
+                  className={styles.techStackImage}
+                />
+                <span className={styles.techStackTitle}>{tool.name}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.techStack}>
+            <span className={styles.technologieTitle}>Datenbanken</span>
+            {skills.datenbanken.map((web, index) => (
               <div key={index} className={styles.techStackItem}>
                 <img
                   src={web.image}
@@ -166,8 +199,8 @@ export const Portfolio = () => {
           </div>
 
           <div className={styles.techStack}>
-            <span className={styles.technologieTitle}>Tools</span>
-            {tools.map((tool, index) => (
+            <span className={styles.technologieTitle}>DevOps & Tools</span>
+            {skills.devOps_Tools.map((tool, index) => (
               <div key={index} className={styles.techStackItem}>
                 <img
                   src={tool.image}
@@ -182,51 +215,42 @@ export const Portfolio = () => {
       </div>
       <div className={styles.pagerProjekte} id="projekte">
         <div className={styles.projectsBox}>
-          <div className={styles.projectContainer}>
-            <img src="projects/barstool1.png" alt=""
-              className={styles.projectImage0} />
-            <img src="projects/barstool2.png" alt=""
-              className={styles.projectImage1} />
-            <div className={styles.projectDescription}>
-              <span className={styles.projectTitle}>Barstool</span>
-              <span className={styles.e}>Barstool ist ein Tool zum finden einer Location zum lernen außerhalb der Öffnungszeiter der Universitäts Bibliothek.</span>
-              <a href="http://barstool.jonasneu.de/">besuchen</a>
+          {projects.map((project, index) => (
+            <div key={index} className={styles.projectContainer}>
+              {project.images.map((image, imgIndex) => (
+                <img
+                  key={imgIndex}
+                  src={image}
+                  alt={project.name}
+                  className={
+                    imgIndex === 0 ? styles.projectImage0 : styles.projectImage1
+                  }
+                />
+              ))}
+              <div className={styles.projectDescription}>
+                {project.logo && (
+                  <img
+                    className={styles.projectLogo}
+                    src={project.logo}
+                    alt={project.name}
+                  />
+                )}
+                {!project.logo && (
+                  <span className={styles.projectTitle}>{project.name}</span>
+                )}
+                <span className={styles.projectDescriptionText}>
+                  {project.description}
+                </span>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  besuchen
+                </a>
+              </div>
             </div>
-          </div>
-          <div className={styles.projectContainer}>
-            <img src="projects/portfolio1.png" alt=""
-              className={styles.projectImage0} />
-            <img src="projects/portfolio2.png" alt=""
-              className={styles.projectImage1} />
-            <div className={styles.projectDescription}>
-              <span className={styles.projectTitle}>Portfolio</span>
-              <span className={styles.e}>
-                Mein persönliches Portfolio ist ein Proof-of-Concept-Projekt,
-                das meine bisherigen Erfahrungen und Arbeiten auf eine einzigartige
-                und interaktive Weise präsentiert. Es ist als ein fiktives Betriebssystem
-                gestaltet und visuell an Windows NT 4.0 angelehnt, um eine nostalgische,
-                aber dennoch moderne Benutzererfahrung zu bieten.
-
-                Beim Start öffnet sich eine Übersichtsseite mit Header, Technologien und
-                Projekten, während das Betriebssystem frei erkundet werden kann
-                – inklusive versteckter Secrets.
-              </span>
-              <a href="#">besuchen</a>
-            </div>
-          </div>
-          <div className={styles.projectContainer}>
-            <img src="projects/timetracker1.png" alt=""
-              className={styles.projectImage0} />
-            <img src="projects/timetracker2.png" alt=""
-              className={styles.projectImage1} />
-            <div className={styles.projectDescription}>
-              <span className={styles.projectTitle}>Timetracker</span>
-              <span className={styles.e}>
-                Eine API, welche Zeiten von einem NFC-Lesegerät empfängt, validiert und in einer Datenbank ablegt. Ebenso gibt es ein Frontend zum Visualisieren der Daten.
-              </span>
-              <a href="http://portfolio.jonasneu.de/">besuchen</a>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

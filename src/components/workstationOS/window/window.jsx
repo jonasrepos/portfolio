@@ -24,7 +24,8 @@ export const Window = ({
 
   const windowRef = useRef(null);
   const isDragging = useRef(false);
-  const offset = useRef({ x: 0, y: 0 });  const [fontSize, setFontSize] = useState(0);
+  const offset = useRef({ x: 0, y: 0 });
+  const [fontSize, setFontSize] = useState(0);
 
   useEffect(() => {
     if (width) {
@@ -32,7 +33,6 @@ export const Window = ({
     }
   }, [width]);
 
-  // Berechnet initial Pixelwerte basierend auf Prozentangaben
   const calculatePixels = () => {
     const parent = windowRef.current?.parentNode;
     if (parent) {
@@ -46,12 +46,10 @@ export const Window = ({
     }
   };
 
-  // Initiale Größe und Position berechnen
   useEffect(() => {
     calculatePixels();
   }, []);
 
-  // Drag & Drop starten
   const handleMouseDown = (e) => {
     isDragging.current = true;
     const currentX = parseFloat(x);
@@ -63,7 +61,6 @@ export const Window = ({
     };
   };
 
-  // Bewegung des Fensters
   const handleMouseMove = (e) => {
     if (!isDragging.current) return;
 
@@ -88,12 +85,10 @@ export const Window = ({
     }
   };
 
-  // Drag & Drop stoppen
   const handleMouseUp = () => {
     isDragging.current = false;
   };
 
-  // Vollbildmodus umschalten
   const handleSetFullsize = () => {
     const parent = windowRef.current?.parentNode;
     if (parent) {
@@ -110,13 +105,12 @@ export const Window = ({
       } else {
         setWidth(prevWidth);
         setHeight(prevHeight);
-        calculatePixels(); // Zurück zu den ursprünglichen Pixelwerten
+        calculatePixels();
       }
       setIsFullsize(!isFullsize);
     }
   };
 
-  // Event-Listener für Drag & Drop
   useEffect(() => {
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
@@ -137,21 +131,21 @@ export const Window = ({
         width: width,
         height: height,
         position: "absolute",
-        fontSize: fontSize
+        fontSize: fontSize,
       }}
     >
-      <div className={styles.header} onMouseDown={handleMouseDown}>
-        <img src={icon} alt="" className={styles.icon} />
-        <span className={styles.text}>{title}</span>
-        <button onClick={handleSetFullsize} className={styles.resizeBtn}>
-          <img src={"resizeIcon.png"} alt="" className={styles.resizeIcon} />
-        </button>
-        <button onClick={handleCloseWindow} className={styles.resizeBtn}>
-          <p>X</p>
-        </button>
-      </div>
-      <div className={styles.content}>
-        {content}
+      <div className={styles.windowBox}>
+        <div className={styles.header} onMouseDown={handleMouseDown}>
+          <img src={icon} alt="" className={styles.icon} />
+          <span className={styles.text}>{title}</span>
+          <button onClick={handleSetFullsize} className={styles.resizeBtn}>
+            <img src={"resizeIcon.png"} alt="" className={styles.resizeIcon} />
+          </button>
+          <button onClick={handleCloseWindow} className={styles.resizeBtn}>
+            <p>X</p>
+          </button>
+        </div>
+        <div className={styles.content}>{content}</div>
       </div>
     </div>
   );
