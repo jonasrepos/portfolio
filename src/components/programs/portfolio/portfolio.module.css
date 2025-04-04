@@ -39,14 +39,17 @@ html {
 
 .navigationItem {
   color: var(--text);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 300;
   text-align: right;
   text-decoration: none;
+  height: 2rem;
 }
 
 .navigationItem:hover {
-  font-weight: 500;
+  font-family: "Pixelify Sans", serif;
+  //color: var(--primary);
+  font-weight: 600;
 }
 
 /* Intro */

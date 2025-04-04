@@ -1,77 +1,47 @@
 import styles from "./portfolio.module.css";
 
-const skills = {
-  programmiersprachen: [
-    {
-      name: "Java",
-      image: "techStackIcons/java.png",
-    },
-    {
-      name: "JavaScript",
-      image: "techStackIcons/js.png",
-    },
-    {
-      name: "TypeScript",
-      image: "techStackIcons/typescript.png",
-    },
-    {
-      name: "C",
-      image: "techStackIcons/c.png",
-    },
-    {
-      name: "Python",
-      image: "techStackIcons/python.png",
-    },
-  ],
-  frontend: [
-    {
-      name: "React",
-      image: "techStackIcons/reactjs.png",
-    },
-    {
-      name: "Angular",
-      image: "techStackIcons/angular.png",
-    },
-  ],
-  backend: [
-    {
-      name: "NestJS (REST)",
-      image: "techStackIcons/nestjs.png",
-    },
-    {
-      name: "Spring",
-      image: "techStackIcons/spring-3.svg",
-    },
-    {
-      name: "RabbitMQ (MQTT)",
-      image: "techStackIcons/rabbitmq.svg",
-    },
-  ],
-  datenbanken: [
-    {
-      name: "Postgresql",
-      image: "techStackIcons/postgresql.png",
-    },
-    {
-      name: "MongoDB",
-      image: "techStackIcons/mongodb.svg",
-    },
-  ],
-  devOps_Tools: [
-    {
-      name: "Git",
-      image: "techStackIcons/git.png",
-    },
-    {
-      name: "Docker",
-      image: "techStackIcons/docker.png",
-    },
-    {
-      name: "Figma",
-      image: "techStackIcons/figma.png",
-    },
-  ],
-};
+const skills = [
+  {
+    name: "Programmiersprachen",
+    technologies: [
+      { name: "Java", image: "techStackIcons/java.png" },
+      { name: "JavaScript", image: "techStackIcons/js.png" },
+      { name: "TypeScript", image: "techStackIcons/typescript.png" },
+      { name: "C", image: "techStackIcons/c.png" },
+      { name: "Python", image: "techStackIcons/python.png" },
+    ],
+  },
+  {
+    name: "Frontend",
+    technologies: [
+      { name: "React", image: "techStackIcons/reactjs.png" },
+      { name: "Angular", image: "techStackIcons/angular.png" },
+    ],
+  },
+  {
+    name: "Backend",
+    technologies: [
+      { name: "NestJS (REST)", image: "techStackIcons/nestjs.png" },
+      { name: "Spring", image: "techStackIcons/spring-3.svg" },
+      { name: "RabbitMQ (MQTT)", image: "techStackIcons/rabbitmq.svg" },
+    ],
+  },
+  {
+    name: "Datenbanken",
+    technologies: [
+      { name: "Postgresql", image: "techStackIcons/postgresql.png" },
+      { name: "MongoDB", image: "techStackIcons/mongodb.svg" },
+    ],
+  },
+  {
+    name: "DevOps & Tools",
+    technologies: [
+      { name: "Git", image: "techStackIcons/git.png" },
+      { name: "Docker", image: "techStackIcons/docker.png" },
+      { name: "Figma", image: "techStackIcons/figma.png" },
+    ],
+  },
+];
 
 const projects = [
   {
@@ -96,7 +66,7 @@ const projects = [
     logo: "projects/timetrackerLogo.svg",
     description:
       "Eine API, welche Zeiten von einem NFC-Lesegerät empfängt, validiert und in einer Datenbank ablegt. Ebenso gibt es ein Frontend zum Visualisieren der Daten.",
-    link: "http://portfolio.jonasneu.de/",
+    link: "",
   },
 ];
 
@@ -140,93 +110,46 @@ export const Portfolio = () => {
           Damit habe ich schon gearbeitet.
         </span>
         <div className={styles.technologiesListBox}>
-          <div className={styles.techStack}>
-            <span className={styles.technologieTitle}>Sprachen</span>
-            {skills.programmiersprachen.map((sprache, index) => (
-              <div key={index} className={styles.techStackItem}>
-                <img
-                  src={sprache.image}
-                  alt={sprache.name}
-                  className={styles.techStackImage}
-                />
-                <span className={styles.techStackTitle}>{sprache.name}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className={styles.techStack}>
-            <span className={styles.technologieTitle}>Frontend</span>
-            {skills.frontend.map((technologie, index) => (
-              <div key={index} className={styles.techStackItem}>
-                <img
-                  src={technologie.image}
-                  alt={technologie.name}
-                  className={styles.techStackImage}
-                />
-                <span className={styles.techStackTitle}>
-                  {technologie.name}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className={styles.techStack}>
-            <span className={styles.technologieTitle}>Backend</span>
-            {skills.backend.map((tool, index) => (
-              <div key={index} className={styles.techStackItem}>
-                <img
-                  src={tool.image}
-                  alt={tool.name}
-                  className={styles.techStackImage}
-                />
-                <span className={styles.techStackTitle}>{tool.name}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className={styles.techStack}>
-            <span className={styles.technologieTitle}>Datenbanken</span>
-            {skills.datenbanken.map((web, index) => (
-              <div key={index} className={styles.techStackItem}>
-                <img
-                  src={web.image}
-                  alt={web.name}
-                  className={styles.techStackImage}
-                />
-                <span className={styles.techStackTitle}>{web.name}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className={styles.techStack}>
-            <span className={styles.technologieTitle}>DevOps & Tools</span>
-            {skills.devOps_Tools.map((tool, index) => (
-              <div key={index} className={styles.techStackItem}>
-                <img
-                  src={tool.image}
-                  alt={tool.name}
-                  className={styles.techStackImage}
-                />
-                <span className={styles.techStackTitle}>{tool.name}</span>
-              </div>
-            ))}
-          </div>
+          {skills.map((skillCategory, index) => (
+            <div key={index} className={styles.techStack}>
+              <span className={styles.technologieTitle}>
+                {skillCategory.name}
+              </span>
+              {skillCategory.technologies.map((tech, techIndex) => (
+                <div key={techIndex} className={styles.techStackItem}>
+                  <img
+                    src={tech.image}
+                    alt={tech.name}
+                    className={styles.techStackImage}
+                  />
+                  <span className={styles.techStackTitle}>{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
+
       <div className={styles.pagerProjekte} id="projekte">
         <div className={styles.projectsBox}>
           {projects.map((project, index) => (
             <div key={index} className={styles.projectContainer}>
-              {project.images.map((image, imgIndex) => (
-                <img
-                  key={imgIndex}
-                  src={image}
-                  alt={project.name}
-                  className={
-                    imgIndex === 0 ? styles.projectImage0 : styles.projectImage1
-                  }
-                />
-              ))}
+              {project.images.map((image, imgIndex) =>
+                imgIndex <= 1 ? (
+                  <img
+                    key={imgIndex}
+                    src={image}
+                    alt={project.name}
+                    className={
+                      imgIndex === 0
+                        ? styles.projectImage0
+                        : styles.projectImage1
+                    }
+                  />
+                ) : (
+                  ""
+                )
+              )}
               <div className={styles.projectDescription}>
                 {project.logo && (
                   <img

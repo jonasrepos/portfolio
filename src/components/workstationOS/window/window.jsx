@@ -121,32 +121,43 @@ export const Window = ({
   }, [handleMouseMove, handleMouseUp]);
 
   return (
-    <div
-      ref={windowRef}
-      className={styles.background}
-      style={{
-        top: y,
-        left: x,
-        zIndex: z,
-        width: width,
-        height: height,
-        position: "absolute",
-        fontSize: fontSize,
-      }}
-    >
-      <div className={styles.windowBox}>
-        <div className={styles.header} onMouseDown={handleMouseDown}>
-          <img src={icon} alt="" className={styles.icon} />
-          <span className={styles.text}>{title}</span>
-          <button onClick={handleSetFullsize} className={styles.resizeBtn}>
-            <img src={"resizeIcon.png"} alt="" className={styles.resizeIcon} />
-          </button>
-          <button onClick={handleCloseWindow} className={styles.resizeBtn}>
-            <p>X</p>
-          </button>
+    <>
+      <div
+        ref={windowRef}
+        style={{
+          top: y,
+          left: x,
+          zIndex: z,
+          width: width,
+          height: height,
+          position: "absolute",
+          fontSize: fontSize,
+        }}
+      >
+        <div className={styles.background}>
+          <div className={styles.windowBox}>
+            <div className={styles.header} onMouseDown={handleMouseDown}>
+              <img src={icon} alt="" className={styles.icon} />
+              <span className={styles.text}>{title}</span>
+              <button onClick={handleSetFullsize} className={styles.resizeBtn}>
+                <img
+                  src={"resizeIcon.png"}
+                  alt=""
+                  className={styles.resizeIcon}
+                />
+              </button>
+              <button onClick={handleCloseWindow} className={styles.resizeBtn}>
+                <p>X</p>
+              </button>
+            </div>
+            <div className={styles.content}>{content}</div>
+            {/*<div className={styles.footer}>
+              <span className={styles.footerText}>Text</span>
+              <div className={styles.footerResize}></div>
+            </div>*/}
+          </div>
         </div>
-        <div className={styles.content}>{content}</div>
       </div>
-    </div>
+    </>
   );
 };
